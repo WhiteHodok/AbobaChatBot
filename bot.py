@@ -18,11 +18,11 @@ def openai_request(query):
     message = response.choices[0].text
     return message
 async def send_welcome(message: types.Message):
-    await bot.send_message(message.chat.id, "Здравствуйте! Я бот, который может помочь вам с чем-то связанным с OpenAI. Напишите ваш вопрос и я постараюсь ответить на него. Чтобы начать, нажмите кнопку Start.")
+    await bot.send_message(message.chat.id, "Здравствуйте! Я бот, который может помочь вам с чем-то. Напишите ваш вопрос и я постараюсь ответить на него. Чтобы начать, нажмите кнопку Start.")
 @dp.message_handler(commands=["start"])
 async def start(message: types.Message):
     # Отправляем пользователю сообщение о начале работы
-    await bot.send_message(message.chat.id, "Здесь вы можете задавать вопросы связанные с OpenAI. Напишите любой вопрос и я постараюсь на него ответить.")
+    await bot.send_message(message.chat.id, "Здесь вы можете задавать вопросы связанные с чем-то. Напишите любой вопрос и я постараюсь на него ответить.")
 # Обрабатываем сообщения от пользователя
 @dp.message_handler()
 async def handle_message(msg: types.Message):
